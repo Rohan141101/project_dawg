@@ -134,6 +134,12 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(fall);
     }
 
+    const explosionSound = new Audio ('epic-explosion.mp3');
+
+    function playExplosionSound() {
+        explosionSound.play();
+    }
+
     // =====================
     // Explosion (NO disappears)
     // =====================
@@ -141,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function explode(x, y) {
 
         bomb.classList.add("hidden");
+        playExplosionSound();
 
         explosion.classList.remove("hidden");
         explosion.style.left = x + "px";
